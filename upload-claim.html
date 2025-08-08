@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Upload Claim PDF</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="upload-container">
+
+    <!-- Logo Section -->
+    <div class="logo-wrapper">
+      <img src="home-health.png" alt="Company Logo" class="logo" />
+    </div>
+
+    <!-- Title -->
+    <h2>Upload Your Claim PDF</h2>
+
+    <!-- Upload Form -->
+    <form id="uploadForm">
+      <label for="secureCode">Agent's Secure Code</label>
+      <input type="password" id="secureCode" placeholder="Enter 6-digit code" required />
+
+      <label for="fileInput">Claim PDF File</label>
+      <input type="file" id="fileInput" accept="application/pdf" required />
+
+      <button type="submit">Send File</button>
+    </form>
+
+    <div id="message" class="message"></div>
+
+    <!-- Claim ID Output Section -->
+    <div id="claimIdSection" style="display: none; margin-top: 20px; text-align: center;">
+      <p><strong>Your Initial Claim ID:</strong></p>
+      <input type="text" id="claimIdField" readonly style="padding: 10px; font-size: 16px; width: 80%; border: 1px solid #ccc; border-radius: 6px;" />
+      <br/><br/>
+      <button onclick="copyClaimId()" style="padding: 10px 20px; background-color: #28a745; border: none; color: white; border-radius: 6px; cursor: pointer;">
+        Copy Initial Claim ID
+      </button>
+      <p style="margin-top: 10px; color: #555;">
+        🔐 <strong>Please save this Claim ID. It is required for further agent communication.</strong>
+      </p>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
